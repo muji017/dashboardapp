@@ -28,7 +28,14 @@ export const authGuardIsLogin: CanActivateFn = (
     console.log("no token")
     return true;
   } else {
-    router.navigate(['/']); 
+    const isAdmin=authService.isAdmin()
+    const isUser=authService.isUser()
+    if(isAdmin){
+      router.navigate(['/admin']);
+    } 
+    else if(isUser){
+      router.navigate(['/user']);
+    }
     return false;
   }
 };
