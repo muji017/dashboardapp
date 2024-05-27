@@ -5,18 +5,44 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModulesModule } from './shared-modules/shared-modules.module';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { InterceptorService } from './interceptors/interceptor.service';
+import { ErrorInterceptor } from './interceptors/errorInterceptor.service';
+import { ToastrModule, provideToastr } from 'ngx-toastr';
+import { ErrorpageComponent } from './features/errorpage/errorpage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ErrorpageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModulesModule
+    SharedModulesModule,
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers:  [
+
+    provideToastr({
+      timeOut: 5000,
+      positionClass: 'toast-center-center',
+      preventDuplicates: true,
+      progressBar: true
+    }),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
