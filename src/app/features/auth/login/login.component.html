@@ -1,1 +1,38 @@
-<p>login works!</p>
+
+<div class="body h-full">
+    <div class="login" alt="">
+
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <div class="">
+                <img src="../../../assets/images/iconlogin.png" width="40%">
+                <h1 style="font-weight: bolder;">
+                    Login
+                </h1>
+
+            </div>
+
+
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label class="">Enter Admin Email</mat-label>
+                <input class="no-focus-ring" type="text" matInput autocomplete="off" formControlName="username">
+            </mat-form-field>
+
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label class="">Enter Admin Password</mat-label>
+                <input class="no-focus-ring" [type]="hide ? 'password' : 'text'" type="password" matInput
+                    autocomplete="off" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+
+            <button class="button" type="submit" mat-raised-button mat-button color="primary">Submit</button>
+        </form>
+    </div>
+
+
+</div>

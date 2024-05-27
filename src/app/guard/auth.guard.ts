@@ -15,4 +15,21 @@ export const authGuard: CanActivateFn = (
     router.navigate(['/login']);
     return false;
   }
+}
+
+export const authGuardIsLogin: CanActivateFn = (
+  route: ActivatedRouteSnapshot,
+  state: RouterStateSnapshot
+): boolean => {
+  const authService = inject(AuthService);
+  const router = inject(Router);
+  console.log(authService.isAuthenticated(),"fcrfcrfcewc")
+  if (!authService.isAuthenticated()) {
+    console.log("no token")
+    return true;
+  } else {
+    router.navigate(['/']); 
+    return false;
+  }
 };
+
