@@ -1,27 +1,29 @@
-# Dashboardapp
+# Dashboard Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
+## Setup
+1. Clone the repository.
+2. Install dependencies: `npm install`
+3. Run the application: `ng serve`
+4. Need to create backend and database
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#Api
+1. api/getallusers , For all users res with status 200 and list of user
+2. api/login ,For login
+3. api/signup
+4. api/getallmessages
+5. api/makeOnlineUser
+6. api/sendmessage
+   
+# AuthService and gurads
+1. `login(credentials: { username: string, password: string })`: Logs in a user and stores the token.
+2. `logout()`: Logs out a user and removes the token.
+3.  Auth guard for resticted unautherised user
+4.  Role guard set privilaged user
+  
+# Other Features
+1. modular architecture
+2. ErrorInterceptors for handling errors
+3. Global Interceptors
+4. Auth guard and Role guard
+5. Authentication using jwt
+6. Services and Socket.io 
