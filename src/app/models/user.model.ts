@@ -20,6 +20,7 @@ export interface UserModel{
     name:string;
     username:string;
     password:string;
+    isOnline:boolean;
 }
 export interface UserList{
     userlist:UserModel[]
@@ -35,3 +36,14 @@ export interface Message{
 export interface MessageList{
     messages:Message
 }
+
+export interface chatRoom{
+    _id:string
+    senderId:any
+    receiverId:any
+}
+
+export interface chatRooms extends chatRoom{
+    chatRooms:chatRoom[]
+}
+
