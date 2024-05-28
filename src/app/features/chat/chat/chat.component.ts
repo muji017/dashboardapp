@@ -55,6 +55,7 @@ export class ChatComponent {
     this.chatService.sendMessage(senderId, receiverId, content).subscribe(
       res => {
         console.log('Message sent:', res);
+        this.messages.push({content:content,senderId:senderId,receiverId:receiverId})
         this.sendMsg = ''; 
       },
       err => {
