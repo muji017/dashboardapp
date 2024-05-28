@@ -10,6 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from "@angular/material/dialog"
 import { MatSidenavModule } from "@angular/material/sidenav"
 import {MatListModule} from "@angular/material/list"
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
     exports: [
@@ -23,7 +25,9 @@ import {MatListModule} from "@angular/material/list"
         MatButtonModule,
         MatDialogModule,
         MatSidenavModule,
-        MatListModule
+        MatListModule,
+        MatPaginatorModule,
+        MatTableModule
     ]
 })
 

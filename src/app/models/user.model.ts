@@ -22,7 +22,7 @@ export interface UserModel{
     password:string;
 }
 export interface UserList{
-    userlist:UserList
+    userlist:UserModel[]
 }
 export interface Message{
     _id?:string;

@@ -14,8 +14,7 @@ export class HeaderComponent {
     private router:Router
   ){}
   userlist() {
-    console.log("rtfvr");
-
+    this.router.navigate(['/admin/userlist'])
   }
   chat() {
     this.router.navigate(['/chat'])

@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="container-fluid flex justify-start ">
+    <div class="container flex-col m-3" style="overflow-x: auto;">
+        <div class="m-3 flex flex-wrap justify-between">
+            <h2 class="font-extrabold">All Users in database</h2>
+        </div>
+        <div class="container bg-white" style=" overflow-x: auto;">
+            <mat-table [dataSource]="dataSource" class="mat-table">
+
+                <ng-container matColumnDef="name">
+                  <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                  <mat-cell *matCellDef="let user"> {{user.name}} </mat-cell>
+                </ng-container>
+            
+                <ng-container matColumnDef="role">
+                  <mat-header-cell *matHeaderCellDef> Role </mat-header-cell>
+                  <mat-cell *matCellDef="let user"> {{user.role}} </mat-cell>
+                </ng-container>
+            
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+              </mat-table>
+            
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+    </div>
+</div>
