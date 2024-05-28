@@ -5,7 +5,7 @@
         <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
 
             <div class="">
-                <img src="../../../assets/images/iconlogin.png" width="40%">
+                <img src="../../../assets/images/sign-up.jpg" width="40%">
                 <h1 style="font-weight: bolder;">
                     Signup Form
                 </h1>
@@ -31,6 +31,7 @@
             </a>
             </mat-form-field>
             <button class="button" type="submit" mat-raised-button mat-button color="primary">Submit</button>
+            <p>Already have an account <a [routerLink]="['/auth/login']">Login</a></p>
         </form>
     </div>
 

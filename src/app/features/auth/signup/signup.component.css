@@ -5,6 +5,8 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    margin: 10px;
+    margin-top: 0px !important;
   }
   .login {
     background-color: #ffffff;

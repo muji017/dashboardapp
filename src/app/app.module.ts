@@ -10,6 +10,7 @@ import { InterceptorService } from './interceptors/interceptor.service';
 import { ErrorInterceptor } from './interceptors/errorInterceptor.service';
 import { ToastrModule, provideToastr } from 'ngx-toastr';
 import { ErrorpageComponent } from './features/errorpage/errorpage.component';
+import { HeaderComponent } from './features/shared/header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,10 @@ import { ErrorpageComponent } from './features/errorpage/errorpage.component';
     BrowserAnimationsModule,
     SharedModulesModule,
     HttpClientModule,
+ 
     ToastrModule.forRoot()
   ],
+  exports:[],
   providers:  [
 
     provideToastr({

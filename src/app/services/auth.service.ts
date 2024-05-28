@@ -28,9 +28,9 @@ export class AuthService {
   }
 
   login(loginData:ModelLogin):Observable<ResponseModelLogin>{
-    return this.http.post<ResponseModelLogin>(`${environment.apiUrl}/login`,loginData);
+    return this.http.post<ResponseModelLogin>(`${environment.apiUrl}/api/login`,loginData);
   }
   signUp(signUpData:signupModel):Observable<ResponseModelLogin>{
-    return this.http.post<ResponseModelLogin>(`${environment.apiUrl}/signup`,signUpData);
+    return this.http.post<ResponseModelLogin>(`${environment.apiUrl}/api/signup`,signUpData);
   }
 }

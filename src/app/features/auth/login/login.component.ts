@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+import { SocketService } from 'src/app/services/socket.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent {
   hide = true;
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router,
-    private toastr:ToastrService
+    private toastr:ToastrService,
+    private socketservice:SocketService
   ) {}
 
   ngOnInit(): void {
@@ -33,8 +35,11 @@ export class LoginComponent {
           if (response) {
             const userType = response.role
             const token = response.token
+            const userId = response.userId
             localStorage.setItem('token', token)
             localStorage.setItem('userType',userType)
+            localStorage.setItem('userId',userId)
+            this.socketservice.connectSocket(userId)
             window.location.reload()
           }
         },
