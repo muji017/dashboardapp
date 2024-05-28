@@ -1,4 +1,4 @@
-# Dashboard Application
+# Dashboard Application with realtime chat using websocket
 
 ## Setup
 1. Clone the repository.
